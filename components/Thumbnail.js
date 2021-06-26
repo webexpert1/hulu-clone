@@ -6,7 +6,7 @@ const myLoader = ({ src, width, quality }) => {
     return `https://links.papareact.com/ua6/${src}?w=${width}&q=${quality || 75}`
 }
 
-function Thumbnail = ({result}, ref) => {
+function Thumbnail({result}){
     const BASE_URL = 'https://image.tmdb.org/t/p/original';
     console.log(result);
 
