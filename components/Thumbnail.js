@@ -6,12 +6,12 @@ const myLoader = ({ src, width, quality }) => {
     return `https://links.papareact.com/ua6/${src}?w=${width}&q=${quality || 75}`
 }
 
-const Thumbnail = forwardRef(({result}, ref) => {
+function Thumbnail = ({result}, ref) => {
     const BASE_URL = 'https://image.tmdb.org/t/p/original';
     console.log(result);
 
     return (
-        <div ref={ref} className='group cursor-pointer p-2 transition duration-200 ease-in transform sm:hover:scale-105 hover:z-50'>
+        <div className='group cursor-pointer p-2 transition duration-200 ease-in transform sm:hover:scale-105 hover:z-50'>
             <Image
                 layout='responsive'
                 src={`${BASE_URL}${result.backdrop_path || result.poster_path}` || `${BASE_URL}${result.poster_path}`}
@@ -28,6 +28,6 @@ const Thumbnail = forwardRef(({result}, ref) => {
             </div>
         </div>
     )
-})
+}
 
 export default Thumbnail
